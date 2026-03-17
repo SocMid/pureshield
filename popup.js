@@ -79,7 +79,9 @@ async function loadState() {
     try {
       const r = await chrome.declarativeNetRequest.getMatchedRules({ tabId: tab.id });
       pageBlocked = r.rulesMatchedInfo?.length ?? 0;
-    } catch {}
+    } catch {
+      // Ignore errors when querying rules directly
+    }
   }
   animateNum(pageCount, pageBlocked);
 

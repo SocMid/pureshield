@@ -48,6 +48,7 @@ async function applyRulesets(filters) {
 
 // ── Track blocked requests ───────────────────────────────────────────────────
 if (chrome.declarativeNetRequest.onRuleMatchedDebug) {
+  // eslint-disable-next-line no-unused-vars
   chrome.declarativeNetRequest.onRuleMatchedDebug.addListener(async (info) => {
     const saved = await chrome.storage.local.get(['stats']);
     const stats = saved.stats || DEFAULT_STATE.stats;
@@ -92,6 +93,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           const count = result.rulesMatchedInfo ? result.rulesMatchedInfo.length : 0;
           sendResponse({ count });
         } catch (e) {
+          // eslint-disable-next-line no-unused-vars
           sendResponse({ count: 0 });
         }
       })();

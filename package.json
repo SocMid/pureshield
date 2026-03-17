@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/SocMid/pureshield#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
     "prettier": "^3.8.1"
   }
 }

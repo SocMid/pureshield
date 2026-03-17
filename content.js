@@ -6,6 +6,7 @@
   // Request the blocked count for this tab from background
   chrome.runtime.sendMessage(
     { type: 'GET_PAGE_BLOCKED', tabId: null }, // tabId resolved in background via sender
+    // eslint-disable-next-line no-unused-vars
     (_response) => {
       /* no-op, popup queries directly */
     }
