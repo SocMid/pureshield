@@ -2,29 +2,37 @@
    Dark, minimal, professional. No emojis. SVG icons only.
    ─────────────────────────────────────────────────────────── */
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --bg:       #0c0f1d;
-  --surface:  #131728;
-  --surface2: #181d30;
-  --border:   rgba(255,255,255,0.07);
-  --border2:  rgba(255,255,255,0.12);
-  --text:     #ffffff;
-  --muted:    #8b95a5;
-  --dim:      #515c7a;
-  --accent:   #5b81ff;
-  --accent-s: rgba(79,114,255,0.15);
-  --green:    #4ca626;
-  --green-s:  rgba(76,166,38,0.1);
-  --green-b:  rgba(76,166,38,0.2);
-  --r:        12px;
-  --r-sm:     8px;
-  --nav:      54px;
-  --font:     'Inter', system-ui, sans-serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html { font-size: 14px; }
+:root {
+  --bg: #0c0f1d;
+  --surface: #131728;
+  --surface2: #181d30;
+  --border: rgba(255, 255, 255, 0.07);
+  --border2: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --muted: #8b95a5;
+  --dim: #515c7a;
+  --accent: #5b81ff;
+  --accent-s: rgba(79, 114, 255, 0.15);
+  --green: #4ca626;
+  --green-s: rgba(76, 166, 38, 0.1);
+  --green-b: rgba(76, 166, 38, 0.2);
+  --r: 12px;
+  --r-sm: 8px;
+  --nav: 54px;
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  font-size: 14px;
+}
 
 body {
   width: 340px;
@@ -37,7 +45,9 @@ body {
   min-height: 480px;
 }
 
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
 
 /* ── Panels ──────────────────────────── */
 .panel {
@@ -47,12 +57,18 @@ body {
   padding: 16px;
   padding-bottom: calc(var(--nav) + 12px);
   gap: 10px;
-  animation: fadeUp .15s ease both;
+  animation: fadeUp 0.15s ease both;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Header ──────────────────────────── */
@@ -63,10 +79,15 @@ body {
   padding-bottom: 8px;
 }
 
-.brand { display: flex; align-items: center; gap: 9px; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 
 .brand-logo {
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
 }
 
@@ -93,12 +114,15 @@ body {
   padding: 4px 10px;
   border-radius: 999px;
   background: var(--accent-s);
-  border: 1px solid rgba(79,114,255,0.25);
+  border: 1px solid rgba(79, 114, 255, 0.25);
   font-size: 10px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.3px;
-  transition: background .3s, border-color .3s, color .3s;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    color 0.3s;
 }
 
 .protect-pill.halal-active {
@@ -106,10 +130,6 @@ body {
   border-color: var(--green-b);
   color: var(--green);
 }
-
-
-
-
 
 /* ── Page Card ───────────────────────── */
 .page-card {
@@ -141,7 +161,9 @@ body {
   white-space: nowrap;
 }
 
-.page-right { text-align: right; }
+.page-right {
+  text-align: right;
+}
 
 .page-count {
   font-size: 30px;
@@ -194,10 +216,14 @@ body {
   font-family: var(--font);
   padding: 3px 8px;
   border-radius: 6px;
-  transition: all .2s;
+  transition: all 0.2s;
   margin-left: auto;
 }
-.reset-btn:hover { color: #ef4444; background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); }
+.reset-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+}
 
 .stats-row {
   display: grid;
@@ -213,7 +239,11 @@ body {
   gap: 3px;
 }
 
-.stat svg { width: 14px; height: 14px; color: var(--accent); }
+.stat svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
 
 .stat-val {
   font-size: 13px;
@@ -232,7 +262,8 @@ body {
 }
 
 .stat-sep {
-  width: 1px; height: 30px;
+  width: 1px;
+  height: 30px;
   background: var(--border2);
   margin: 0 2px;
 }
@@ -247,7 +278,11 @@ body {
   padding: 0 2px;
 }
 
-.filters { display: flex; flex-direction: column; gap: 6px; }
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 .filter-row {
   display: flex;
@@ -257,27 +292,51 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
-  transition: border-color .2s, background .2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
-.filter-row:hover { border-color: var(--border2); background: var(--surface2); }
-.filter-row.halal { border-color: rgba(76,166,38,0.12); }
-.filter-row.halal:hover { border-color: var(--green-b); background: rgba(76,166,38,0.04); }
+.filter-row:hover {
+  border-color: var(--border2);
+  background: var(--surface2);
+}
+.filter-row.halal {
+  border-color: rgba(76, 166, 38, 0.12);
+}
+.filter-row.halal:hover {
+  border-color: var(--green-b);
+  background: rgba(76, 166, 38, 0.04);
+}
 
 .filter-icon-wrap {
-  width: 30px; height: 30px;
+  width: 30px;
+  height: 30px;
   border-radius: 7px;
   background: var(--accent-s);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.filter-icon-wrap svg { width: 15px; height: 15px; color: var(--accent); }
+.filter-icon-wrap svg {
+  width: 15px;
+  height: 15px;
+  color: var(--accent);
+}
 
-.halal-icon { background: var(--green-s); }
-.halal-icon svg { color: var(--green); }
+.halal-icon {
+  background: var(--green-s);
+}
+.halal-icon svg {
+  color: var(--green);
+}
 
-.filter-text { flex: 1; min-width: 0; }
+.filter-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .filter-name {
   font-size: 12px;
@@ -295,12 +354,15 @@ body {
 /* ── Toggle ──────────────────────────── */
 .toggle {
   position: relative;
-  width: 38px; height: 22px;
+  width: 38px;
+  height: 22px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
-.toggle input { display: none; }
+.toggle input {
+  display: none;
+}
 
 .thumb {
   position: absolute;
@@ -308,17 +370,23 @@ body {
   background: #1a2040;
   border-radius: 999px;
   border: 1px solid var(--border2);
-  transition: background .25s, border .25s;
+  transition:
+    background 0.25s,
+    border 0.25s;
 }
 
 .thumb::after {
   content: '';
   position: absolute;
-  width: 14px; height: 14px;
-  left: 3px; top: 3px;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
   background: var(--muted);
   border-radius: 50%;
-  transition: transform .25s, background .25s;
+  transition:
+    transform 0.25s,
+    background 0.25s;
 }
 
 input:checked + .thumb {
@@ -338,7 +406,9 @@ input:checked + .halal-thumb {
 /* ── Nav ─────────────────────────────── */
 .bottom-nav {
   position: fixed;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: var(--nav);
   background: var(--surface);
   border-top: 1px solid var(--border2);
@@ -362,14 +432,24 @@ input:checked + .halal-thumb {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  transition: color .2s;
+  transition: color 0.2s;
   padding: 8px 4px;
 }
 
-.nav-btn svg { width: 17px; height: 17px; transition: transform .2s; }
-.nav-btn:hover { color: var(--text); }
-.nav-btn:hover svg { transform: translateY(-1px); }
-.nav-btn.active { color: var(--accent); }
+.nav-btn svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.2s;
+}
+.nav-btn:hover {
+  color: var(--text);
+}
+.nav-btn:hover svg {
+  transform: translateY(-1px);
+}
+.nav-btn.active {
+  color: var(--accent);
+}
 
 /* ── About ───────────────────────────── */
 .about-wrap {
@@ -382,7 +462,8 @@ input:checked + .halal-thumb {
 }
 
 .about-logo {
-  width: 60px; height: 60px;
+  width: 60px;
+  height: 60px;
   border-radius: 14px;
 }
 
@@ -431,7 +512,8 @@ input:checked + .halal-thumb {
 }
 
 .about-card svg {
-  width: 16px; height: 16px;
+  width: 16px;
+  height: 16px;
   color: var(--accent);
   flex-shrink: 0;
   margin-top: 1px;
@@ -457,7 +539,11 @@ input:checked + .halal-thumb {
   margin-top: 4px;
 }
 
-.about-contact svg { width: 14px; height: 14px; color: var(--muted); }
+.about-contact svg {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+}
 
 .contact-email {
   font-size: 13px;
@@ -466,9 +552,15 @@ input:checked + .halal-thumb {
   text-decoration: none;
 }
 
-.contact-email:hover { text-decoration: underline; }
+.contact-email:hover {
+  text-decoration: underline;
+}
 
-.about-hint { font-size: 10px; color: var(--dim); margin-top: -4px; }
+.about-hint {
+  font-size: 10px;
+  color: var(--dim);
+  margin-top: -4px;
+}
 
 /* ── Islamic Reminders ───────────────── */
 .reminders-wrap {
@@ -499,28 +591,52 @@ input:checked + .halal-thumb {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
-  transition: border-color .2s;
+  transition: border-color 0.2s;
 }
 
-.reminder-card:hover { border-color: var(--border2); }
+.reminder-card:hover {
+  border-color: var(--border2);
+}
 
 .reminder-icon {
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.reminder-card.prayer .reminder-icon { background: rgba(79,114,255,0.1); }
-.reminder-card.prayer .reminder-icon svg { color: var(--accent); }
-.reminder-card.sadaqah .reminder-icon { background: rgba(239,68,68,0.08); }
-.reminder-card.sadaqah .reminder-icon svg { color: #ef4444; }
-.reminder-card.quran .reminder-icon { background: rgba(245,158,11,0.1); }
-.reminder-card.quran .reminder-icon svg { color: #f59e0b; }
-.reminder-card.dhikr .reminder-icon { background: var(--green-s); }
-.reminder-card.dhikr .reminder-icon svg { color: var(--green); }
+.reminder-card.prayer .reminder-icon {
+  background: rgba(79, 114, 255, 0.1);
+}
+.reminder-card.prayer .reminder-icon svg {
+  color: var(--accent);
+}
+.reminder-card.sadaqah .reminder-icon {
+  background: rgba(239, 68, 68, 0.08);
+}
+.reminder-card.sadaqah .reminder-icon svg {
+  color: #ef4444;
+}
+.reminder-card.quran .reminder-icon {
+  background: rgba(245, 158, 11, 0.1);
+}
+.reminder-card.quran .reminder-icon svg {
+  color: #f59e0b;
+}
+.reminder-card.dhikr .reminder-icon {
+  background: var(--green-s);
+}
+.reminder-card.dhikr .reminder-icon svg {
+  color: var(--green);
+}
 
-.reminder-icon svg { width: 16px; height: 16px; }
+.reminder-icon svg {
+  width: 16px;
+  height: 16px;
+}
 
 .reminder-title {
   font-size: 12px;

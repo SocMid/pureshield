@@ -1,32 +1,302 @@
 [
-  {"id":1,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?xhamster\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":2,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?pornhub\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":3,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?xvideos\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":4,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?xnxx\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":5,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?redtube\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":6,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?youporn\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":7,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?tube8\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":8,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?spankbang\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":9,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?beeg\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":10,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?chaturbate\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":11,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?livejasmin\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":12,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?bongacams\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":13,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?stripchat\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":14,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?brazzers\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":15,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?naughtyamerica\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":16,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?bangbros\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":17,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?onlyfans\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":18,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?txxx\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":19,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?tnaflix\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":20,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?drtuber\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":21,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?slutload\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":22,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?empflix\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":23,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?vporn\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":24,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?porntube\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":25,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?hentaihaven\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":26,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?bet365\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":27,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?betway\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":28,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?1xbet\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":29,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?pokerstars\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}},
-  {"id":30,"priority":15,"action":{"type":"redirect","redirect":{"extensionPath":"/blocked.html"}},"condition":{"regexFilter":"^https?://([a-z0-9-]+\\.)?stake\\.[a-z]+","resourceTypes":["main_frame"],"isUrlFilterCaseSensitive":false}}
+  {
+    "id": 1,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?xhamster\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 2,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?pornhub\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 3,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?xvideos\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 4,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?xnxx\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 5,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?redtube\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 6,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?youporn\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 7,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?tube8\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 8,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?spankbang\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 9,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?beeg\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 10,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?chaturbate\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 11,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?livejasmin\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 12,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?bongacams\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 13,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?stripchat\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 14,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?brazzers\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 15,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?naughtyamerica\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 16,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?bangbros\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 17,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?onlyfans\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 18,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?txxx\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 19,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?tnaflix\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 20,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?drtuber\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 21,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?slutload\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 22,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?empflix\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 23,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?vporn\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 24,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?porntube\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 25,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?hentaihaven\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 26,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?bet365\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 27,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?betway\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 28,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?1xbet\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 29,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?pokerstars\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 30,
+    "priority": 15,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
+    "condition": {
+      "regexFilter": "^https?://([a-z0-9-]+\\.)?stake\\.[a-z]+",
+      "resourceTypes": ["main_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  }
 ]

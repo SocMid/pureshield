@@ -6,6 +6,8 @@
   // Request the blocked count for this tab from background
   chrome.runtime.sendMessage(
     { type: 'GET_PAGE_BLOCKED', tabId: null }, // tabId resolved in background via sender
-    (_response) => { /* no-op, popup queries directly */ }
+    (_response) => {
+      /* no-op, popup queries directly */
+    }
   );
 })();

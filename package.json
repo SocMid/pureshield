@@ -1,0 +1,27 @@
+{
+  "name": "pureshield",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">   <img src=\"icons/icon128.png\" alt=\"PureShield Logo\" width=\"128\">   <h1>PureShield</h1>   <p><strong>A comprehensive, privacy-first ad blocker, tracker blocker, and halal internet filter by SOCMID.</strong></p>",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/SocMid/pureshield.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SocMid/pureshield/issues"
+  },
+  "homepage": "https://github.com/SocMid/pureshield#readme",
+  "devDependencies": {
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1"
+  }
+}

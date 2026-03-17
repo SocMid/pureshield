@@ -78,8 +78,7 @@
     if (!video) return;
 
     const adShowing =
-      document.querySelector('.ad-showing') ||
-      document.querySelector('.ytp-ad-player-overlay');
+      document.querySelector('.ad-showing') || document.querySelector('.ytp-ad-player-overlay');
 
     if (adShowing) {
       if (!video.muted) video.muted = true;
@@ -91,7 +90,9 @@
 
   function removePromotedSearchResults() {
     if (!adsEnabled) return;
-    document.querySelectorAll('ytd-search-pyv-renderer, ytd-shelf-renderer[is-banner]').forEach(el => el.remove());
+    document
+      .querySelectorAll('ytd-search-pyv-renderer, ytd-shelf-renderer[is-banner]')
+      .forEach((el) => el.remove());
   }
 
   const observer = new MutationObserver(() => {
@@ -101,10 +102,10 @@
 
   function init() {
     chrome.storage.local.get(['filters'], (saved) => {
-      adsEnabled = saved.filters ? (saved.filters.ads !== false) : true;
-      
+      adsEnabled = saved.filters ? saved.filters.ads !== false : true;
+
       setAdHiderCSS(adsEnabled);
-      
+
       observer.observe(document.documentElement, {
         childList: true,
         subtree: true,

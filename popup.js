@@ -1,44 +1,45 @@
 // popup.js – PureShield Popup Controller
 
-const pageDomain   = document.getElementById('pageDomain');
-const pageCount    = document.getElementById('pageCount');
-const statTotal    = document.getElementById('statTotal');
-const statBandwidth= document.getElementById('statBandwidth');
-const statTime     = document.getElementById('statTime');
-const protectPill  = document.getElementById('protectPill');
-const protectText  = document.getElementById('protectText');
-const resetBtn     = document.getElementById('resetBtn');
+const pageDomain = document.getElementById('pageDomain');
+const pageCount = document.getElementById('pageCount');
+const statTotal = document.getElementById('statTotal');
+const statBandwidth = document.getElementById('statBandwidth');
+const statTime = document.getElementById('statTime');
+const protectPill = document.getElementById('protectPill');
+const protectText = document.getElementById('protectText');
+const resetBtn = document.getElementById('resetBtn');
 
-const toggleAds      = document.getElementById('toggleAds');
+const toggleAds = document.getElementById('toggleAds');
 const toggleTrackers = document.getElementById('toggleTrackers');
-const toggleHalal    = document.getElementById('toggleHalal');
+const toggleHalal = document.getElementById('toggleHalal');
 
 // ── Formatters ────────────────────────────────────────────────
 function fmtBW(kb) {
   if (kb < 1024) return Math.round(kb) + ' KB';
-  if (kb < 1024*1024) return (kb/1024).toFixed(1) + ' MB';
-  return (kb/(1024*1024)).toFixed(2) + ' GB';
+  if (kb < 1024 * 1024) return (kb / 1024).toFixed(1) + ' MB';
+  return (kb / (1024 * 1024)).toFixed(2) + ' GB';
 }
 function fmtTime(ms) {
-  if (ms < 1000)   return Math.round(ms) + ' ms';
-  if (ms < 60000)  return (ms/1000).toFixed(1) + ' s';
-  if (ms < 3600000)return (ms/60000).toFixed(1) + ' min';
-  return (ms/3600000).toFixed(1) + ' hr';
+  if (ms < 1000) return Math.round(ms) + ' ms';
+  if (ms < 60000) return (ms / 1000).toFixed(1) + ' s';
+  if (ms < 3600000) return (ms / 60000).toFixed(1) + ' min';
+  return (ms / 3600000).toFixed(1) + ' hr';
 }
 function fmtN(n) {
-  if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
-  if (n >= 1e3) return (n/1e3).toFixed(1) + 'K';
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
   return n.toString();
 }
 
 function animateNum(el, target, fmt = String) {
   const from = parseInt(el.dataset.raw || '0') || 0;
   el.dataset.raw = target;
-  const dur = 500, t0 = performance.now();
+  const dur = 500,
+    t0 = performance.now();
   function step(now) {
-    const p = Math.min((now-t0)/dur, 1);
-    const ease = 1 - Math.pow(1-p, 3);
-    el.textContent = fmt(Math.round(from + (target-from)*ease));
+    const p = Math.min((now - t0) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = fmt(Math.round(from + (target - from) * ease));
     if (p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
@@ -46,9 +47,9 @@ function animateNum(el, target, fmt = String) {
 
 // ── Apply UI state based on filters ───────────────────────────
 function applyUI(filters) {
-  toggleAds.checked      = filters.ads      ?? true;
+  toggleAds.checked = filters.ads ?? true;
   toggleTrackers.checked = filters.trackers ?? true;
-  toggleHalal.checked    = filters.halal    ?? false;
+  toggleHalal.checked = filters.halal ?? false;
 
   if (filters.halal) {
     protectPill.classList.add('halal-active');
@@ -66,8 +67,10 @@ async function loadState() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (tab?.url) {
     try {
-      pageDomain.textContent = new URL(tab.url).hostname.replace(/^www\./,'');
-    } catch { pageDomain.textContent = '—'; }
+      pageDomain.textContent = new URL(tab.url).hostname.replace(/^www\./, '');
+    } catch {
+      pageDomain.textContent = '—';
+    }
   }
 
   // Per-page block count
@@ -116,10 +119,10 @@ resetBtn.addEventListener('click', () => {
 });
 
 // ── Bottom Nav ─────────────────────────────────────────────────
-document.querySelectorAll('.nav-btn').forEach(btn => {
+document.querySelectorAll('.nav-btn').forEach((btn) => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.nav-btn').forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach((p) => p.classList.add('hidden'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.panel).classList.remove('hidden');
   });

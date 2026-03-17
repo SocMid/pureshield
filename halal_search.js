@@ -17,24 +17,98 @@
 
     // ── Blocked domain/keyword lists ─────────────────────────────────────────
     const BLOCKED_DOMAINS = [
-      'pornhub','xvideos','xhamster','xnxx','redtube','youporn','tube8',
-      'brazzers','bangbros','naughtyamerica','onlyfans','spankbang','beeg',
-      'chaturbate','livejasmin','cam4','bongacams','stripchat','myfreecams',
-      'tnaflix','drtuber','4tube','extremetube','xtube','slutload','sunporno',
-      'keezmovies','megatube','sexvid','vporn','empflix','letmejerk','fux',
-      'hardsextube','txxx','porntube','goldpornfilms','alotporn','xxxbunker',
-      'bet365','betway','williamhill','bovada','1xbet','pokerstars',
-      'bitstarz','stake.com','rollbit','roobet','casumo','unibet',
-      'bwin','betfair','ladbrokes','skybet','betmgm','fanduel','draftkings',
-      'partypoker','ggpoker','22bet','mostbet','melbet','parimatch',
-      'casinoluck','leovegas','rizk','mrgreen','betsson',
+      'pornhub',
+      'xvideos',
+      'xhamster',
+      'xnxx',
+      'redtube',
+      'youporn',
+      'tube8',
+      'brazzers',
+      'bangbros',
+      'naughtyamerica',
+      'onlyfans',
+      'spankbang',
+      'beeg',
+      'chaturbate',
+      'livejasmin',
+      'cam4',
+      'bongacams',
+      'stripchat',
+      'myfreecams',
+      'tnaflix',
+      'drtuber',
+      '4tube',
+      'extremetube',
+      'xtube',
+      'slutload',
+      'sunporno',
+      'keezmovies',
+      'megatube',
+      'sexvid',
+      'vporn',
+      'empflix',
+      'letmejerk',
+      'fux',
+      'hardsextube',
+      'txxx',
+      'porntube',
+      'goldpornfilms',
+      'alotporn',
+      'xxxbunker',
+      'bet365',
+      'betway',
+      'williamhill',
+      'bovada',
+      '1xbet',
+      'pokerstars',
+      'bitstarz',
+      'stake.com',
+      'rollbit',
+      'roobet',
+      'casumo',
+      'unibet',
+      'bwin',
+      'betfair',
+      'ladbrokes',
+      'skybet',
+      'betmgm',
+      'fanduel',
+      'draftkings',
+      'partypoker',
+      'ggpoker',
+      '22bet',
+      'mostbet',
+      'melbet',
+      'parimatch',
+      'casinoluck',
+      'leovegas',
+      'rizk',
+      'mrgreen',
+      'betsson',
     ];
 
     const BLOCKED_SEARCH_TERMS = [
-      'porn','pornhub','xvideos','xhamster','xnxx','xxx video',
-      'sex video','nude','naked girl','camgirl','onlyfans leak',
-      'hentai video','adult video','erotic','casino bonus','free slots',
-      'online betting','sports betting','online casino','gambling',
+      'porn',
+      'pornhub',
+      'xvideos',
+      'xhamster',
+      'xnxx',
+      'xxx video',
+      'sex video',
+      'nude',
+      'naked girl',
+      'camgirl',
+      'onlyfans leak',
+      'hentai video',
+      'adult video',
+      'erotic',
+      'casino bonus',
+      'free slots',
+      'online betting',
+      'sports betting',
+      'online casino',
+      'gambling',
     ];
 
     // ── Platform selectors ───────────────────────────────────────────────────
@@ -48,7 +122,10 @@
     } else if (/duckduckgo\.com/.test(host)) {
       selectors = ['[data-testid="result"]', '.result', '.result--web'];
     } else if (/youtube\.com/.test(host)) {
-      selectors = ['ytd-search-renderer ytd-video-renderer', 'ytd-search-renderer ytd-channel-renderer'];
+      selectors = [
+        'ytd-search-renderer ytd-video-renderer',
+        'ytd-search-renderer ytd-channel-renderer',
+      ];
     }
 
     if (selectors.length === 0) return;
@@ -57,13 +134,17 @@
     function isDomainBlocked(url) {
       try {
         const hostname = new URL(url).hostname.toLowerCase();
-        return BLOCKED_DOMAINS.some(d => hostname.includes(d));
-      } catch { return false; }
+        return BLOCKED_DOMAINS.some((d) => hostname.includes(d));
+      } catch {
+        return false;
+      }
     }
 
     function isTermBlocked(text) {
       const lower = text.toLowerCase();
-      return BLOCKED_SEARCH_TERMS.some(t => lower === t || lower.startsWith(t + ' ') || lower.includes(' ' + t));
+      return BLOCKED_SEARCH_TERMS.some(
+        (t) => lower === t || lower.startsWith(t + ' ') || lower.includes(' ' + t)
+      );
     }
 
     function shouldBlock(el) {
@@ -76,7 +157,7 @@
       }
       // Check cite/URL display elements
       for (const cite of el.querySelectorAll('cite, [data-dtld]')) {
-        if (BLOCKED_DOMAINS.some(d => cite.textContent.toLowerCase().includes(d))) return true;
+        if (BLOCKED_DOMAINS.some((d) => cite.textContent.toLowerCase().includes(d))) return true;
       }
       return false;
     }
@@ -103,5 +184,4 @@
     filterResults();
     document.addEventListener('DOMContentLoaded', filterResults);
   }
-
 })();

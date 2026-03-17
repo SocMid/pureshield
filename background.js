@@ -1,12 +1,12 @@
 // background.js – PureShield Service Worker
 
-const AVG_REQUEST_SIZE_KB = 50;   // KB per blocked request
-const AVG_REQUEST_TIME_MS = 80;   // ms saved per blocked request
+const AVG_REQUEST_SIZE_KB = 50; // KB per blocked request
+const AVG_REQUEST_TIME_MS = 80; // ms saved per blocked request
 
 // ── Defaults ────────────────────────────────────────────────────────────────
 const DEFAULT_STATE = {
   filters: { ads: true, trackers: true, halal: false },
-  stats: { totalBlocked: 0, bandwidthKB: 0, timeSavedMs: 0 }
+  stats: { totalBlocked: 0, bandwidthKB: 0, timeSavedMs: 0 },
 };
 
 // ── Startup ─────────────────────────────────────────────────────────────────
@@ -35,13 +35,13 @@ async function applyRulesets(filters) {
   }
   // Deduplicate
   const enable = [...new Set(enableIds)];
-  const disable = [...new Set(disableIds)].filter(id => !enable.includes(id));
+  const disable = [...new Set(disableIds)].filter((id) => !enable.includes(id));
   try {
     await chrome.declarativeNetRequest.updateEnabledRulesets({
       enableRulesetIds: enable,
-      disableRulesetIds: disable
+      disableRulesetIds: disable,
     });
-  } catch(e) {
+  } catch (e) {
     console.error('PureShield ruleset update error:', e);
   }
 }
@@ -61,12 +61,11 @@ if (chrome.declarativeNetRequest.onRuleMatchedDebug) {
 // ── Message handler ──────────────────────────────────────────────────────────
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   switch (message.type) {
-
     case 'GET_STATE': {
       (async () => {
         const saved = await chrome.storage.local.get(['filters', 'stats']);
         const filters = saved.filters || DEFAULT_STATE.filters;
-        const stats   = saved.stats   || DEFAULT_STATE.stats;
+        const stats = saved.stats || DEFAULT_STATE.stats;
         sendResponse({ filters, stats });
       })();
       return true;
@@ -92,7 +91,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           const result = await chrome.declarativeNetRequest.getMatchedRules({ tabId });
           const count = result.rulesMatchedInfo ? result.rulesMatchedInfo.length : 0;
           sendResponse({ count });
-        } catch(e) {
+        } catch (e) {
           sendResponse({ count: 0 });
         }
       })();
