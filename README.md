@@ -9,7 +9,13 @@
 
 </div>
 
-<br>
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://us-central1-gemini-mcp-tools.cloudfunctions.net/tools/image/read?id=df637775-8025-4c04-a901-2a1cb5ab7574" width="45%" alt="PureShield Dashboard">
+  &nbsp;
+  <img src="https://us-central1-gemini-mcp-tools.cloudfunctions.net/tools/image/read?id=37cf3ffc-bacc-424b-a957-c58d0473a213" width="45%" alt="PureShield Reminders">
+</p>
 
 ## 🛡️ Features
 
