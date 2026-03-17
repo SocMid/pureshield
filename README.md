@@ -11,10 +11,6 @@
 
 <br>
 
-<p align="center">
-  <img src="https://socialify.git.ci/SocMid/pureshield/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark" alt="PureShield Project Banner">
-</p>
-
 ## 🛡️ Features
 
 PureShield is built on Manifest V3 for optimal performance and security. It offers a three-pillar protection system:
