@@ -12,9 +12,9 @@
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://i.imgur.com/8Y4yv04.png" width="45%" alt="PureShield Dashboard">
+  <img src="assets/images/dashboard.png" width="45%" alt="PureShield Dashboard">
   &nbsp;
-  <img src="https://i.imgur.com/r62Kq0N.png" width="45%" alt="PureShield Reminders">
+  <img src="assets/images/reminders.png" width="45%" alt="PureShield Reminders">
 </p>
 
 ## 🛡️ Features
