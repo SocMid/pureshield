@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "PureShield",
   "short_name": "PureShield",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ad blocker, tracker blocker & halal filter. By SOCMID.",
   "author": "SOCMID",
   "permissions": [
@@ -54,6 +54,13 @@
       "js": ["youtube_content.js"],
       "run_at": "document_start",
       "all_frames": true
+    },
+    {
+      "matches": ["*://*.youtube.com/*", "*://youtube.com/*"],
+      "js": ["yt_scriptlet.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
     }
   ],
   "web_accessible_resources": [
