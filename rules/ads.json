@@ -84118,5 +84118,78 @@
     "condition": { "urlFilter": "||pornohans.net/static/exo" },
     "id": 3653,
     "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/ptracking?"
+    },
+    "id": 3654,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/api/stats/ads?"
+    },
+    "id": 3655,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/api/stats/atr?"
+    },
+    "id": 3656,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/api/stats/watchtime?*adformat"
+    },
+    "id": 3657,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/generate_204?*adformat"
+    },
+    "id": 3658,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "resourceTypes": ["xmlhttprequest", "image", "ping"],
+      "urlFilter": "||doubleclick.net/pagead/"
+    },
+    "id": 3659,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/youtubei/v1/log_event?*adformat"
+    },
+    "id": 3660,
+    "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/youtubei/v1/att/get?"
+    },
+    "id": 3661,
+    "priority": 10
   }
 ]
