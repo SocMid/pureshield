@@ -3,7 +3,7 @@
   <h1>PureShield</h1>
   <p><strong>A comprehensive, privacy-first ad blocker, tracker blocker, and halal internet filter by SOCMID.</strong></p>
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/SocMid/pureshield)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/SocMid/pureshield)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/SocMid/pureshield/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Chrome%20|%20Edge%20|%20Brave-lightgrey.svg)](#)
 
