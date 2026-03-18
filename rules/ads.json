@@ -84209,5 +84209,41 @@
     },
     "id": 3663,
     "priority": 20
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||www.youtube.com/get_midroll_?"
+    },
+    "id": 3664,
+    "priority": 20
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||m.youtube.com/get_midroll_?"
+    },
+    "id": 3665,
+    "priority": 20
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||youtube.com/api/stats/ads?"
+    },
+    "id": 3666,
+    "priority": 20
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||www.youtube.com/youtubei/v1/log_event?*adformat"
+    },
+    "id": 3667,
+    "priority": 25
   }
 ]
