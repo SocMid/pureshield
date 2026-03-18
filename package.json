@@ -1,6 +1,6 @@
 {
   "name": "pureshield",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "<div align=\"center\">   <img src=\"icons/icon128.png\" alt=\"PureShield Logo\" width=\"128\">   <h1>PureShield</h1>   <p><strong>A comprehensive, privacy-first ad blocker, tracker blocker, and halal internet filter by SOCMID.</strong></p>",
   "main": "background.js",
   "scripts": {
