@@ -84191,5 +84191,23 @@
     },
     "id": 3661,
     "priority": 10
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||googlevideo.com/videoplayback?*ctier=L"
+    },
+    "id": 3662,
+    "priority": 20
+  },
+  {
+    "action": { "type": "block" },
+    "condition": {
+      "initiatorDomains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "urlFilter": "||www.youtube.com/youtubei/v1/player/ad_break?"
+    },
+    "id": 3663,
+    "priority": 20
   }
 ]
