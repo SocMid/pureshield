@@ -1,7 +1,7 @@
-// background.js – PureShield Service Worker
+// background.js – PureShield Service Worker (v1.1.0)
 
-const AVG_REQUEST_SIZE_KB = 50; // KB per blocked request
-const AVG_REQUEST_TIME_MS = 80; // ms saved per blocked request
+const AVG_REQUEST_SIZE_KB = 50; // KB per blocked request (estimate)
+const AVG_REQUEST_TIME_MS = 80; // ms saved per blocked request (estimate)
 
 // ── Defaults ────────────────────────────────────────────────────────────────
 const DEFAULT_STATE = {
@@ -17,6 +17,9 @@ async function initExtension() {
   const saved = await chrome.storage.local.get(['filters', 'stats']);
   const filters = saved.filters || DEFAULT_STATE.filters;
   await applyRulesets(filters);
+
+  // Set up periodic stats counting using session rules
+  await startStatsTracking();
 }
 
 // ── Apply rulesets based on filter toggles ───────────────────────────────────
@@ -46,24 +49,66 @@ async function applyRulesets(filters) {
   }
 }
 
-// ── Track blocked requests ───────────────────────────────────────────────────
-if (chrome.declarativeNetRequest.onRuleMatchedDebug) {
-  // eslint-disable-next-line no-unused-vars
-  chrome.declarativeNetRequest.onRuleMatchedDebug.addListener(async (info) => {
-    const saved = await chrome.storage.local.get(['stats']);
-    const stats = saved.stats || DEFAULT_STATE.stats;
-    stats.totalBlocked += 1;
-    stats.bandwidthKB += AVG_REQUEST_SIZE_KB;
-    stats.timeSavedMs += AVG_REQUEST_TIME_MS;
-    await chrome.storage.local.set({ stats });
-  });
+// ── Stats Tracking via periodic matched-rules polling ────────────────────────
+// onRuleMatchedDebug only works in dev mode.
+// Instead, we poll getMatchedRules() every 10s across ALL tabs and accumulate.
+let lastKnownRuleCount = 0;
+
+async function startStatsTracking() {
+  // Set up an alarm that fires every 30 seconds
+  chrome.alarms.create('pureshield-stats', { periodInMinutes: 0.5 });
 }
+
+chrome.alarms.onAlarm.addListener(async (alarm) => {
+  if (alarm.name !== 'pureshield-stats') return;
+  await updateStats();
+});
+
+async function updateStats() {
+  try {
+    // Get all matched rules across all tabs
+    const tabs = await chrome.tabs.query({});
+    let totalMatches = 0;
+
+    for (const tab of tabs) {
+      if (!tab.id || tab.id < 0) continue;
+      try {
+        const result = await chrome.declarativeNetRequest.getMatchedRules({ tabId: tab.id });
+        totalMatches += (result.rulesMatchedInfo?.length ?? 0);
+      } catch {
+        // Tab may have been closed or is a system tab
+      }
+    }
+
+    if (totalMatches > lastKnownRuleCount) {
+      const newBlocked = totalMatches - lastKnownRuleCount;
+      const saved = await chrome.storage.local.get(['stats']);
+      const stats = saved.stats || { ...DEFAULT_STATE.stats };
+      stats.totalBlocked += newBlocked;
+      stats.bandwidthKB += newBlocked * AVG_REQUEST_SIZE_KB;
+      stats.timeSavedMs += newBlocked * AVG_REQUEST_TIME_MS;
+      await chrome.storage.local.set({ stats });
+    }
+    lastKnownRuleCount = totalMatches;
+  } catch (e) {
+    console.error('PureShield stats update error:', e);
+  }
+}
+
+// Also track on tab navigation for more accurate counts
+chrome.webNavigation?.onCompleted?.addListener(async (details) => {
+  if (details.frameId !== 0) return;
+  // Small delay to allow rules to match
+  setTimeout(() => updateStats(), 2000);
+});
 
 // ── Message handler ──────────────────────────────────────────────────────────
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   switch (message.type) {
     case 'GET_STATE': {
       (async () => {
+        // Force a stats update before responding
+        await updateStats();
         const saved = await chrome.storage.local.get(['filters', 'stats']);
         const filters = saved.filters || DEFAULT_STATE.filters;
         const stats = saved.stats || DEFAULT_STATE.stats;
@@ -92,8 +137,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           const result = await chrome.declarativeNetRequest.getMatchedRules({ tabId });
           const count = result.rulesMatchedInfo ? result.rulesMatchedInfo.length : 0;
           sendResponse({ count });
-        } catch (e) {
-          // eslint-disable-next-line no-unused-vars
+        } catch {
           sendResponse({ count: 0 });
         }
       })();
@@ -102,7 +146,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     case 'RESET_STATS': {
       (async () => {
-        await chrome.storage.local.set({ stats: DEFAULT_STATE.stats });
+        lastKnownRuleCount = 0;
+        await chrome.storage.local.set({ stats: { ...DEFAULT_STATE.stats } });
         sendResponse({ success: true });
       })();
       return true;

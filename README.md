@@ -3,7 +3,7 @@
   <h1>PureShield</h1>
   <p><strong>A comprehensive, privacy-first ad blocker, tracker blocker, and halal internet filter by SOCMID.</strong></p>
 
-[![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://github.com/SocMid/pureshield)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/SocMid/pureshield)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/SocMid/pureshield/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Chrome%20|%20Edge%20|%20Brave-lightgrey.svg)](#)
 
@@ -13,8 +13,6 @@
 
 <p align="center">
   <img src="assets/images/dashboard.png" width="45%" alt="PureShield Dashboard">
-  &nbsp;
-  <img src="assets/images/reminders.png" width="45%" alt="PureShield Reminders">
 </p>
 
 ## 🛡️ Features
@@ -67,6 +65,7 @@ pureshield/
 ├── content.js             # General content script for DOM manipulation
 ├── halal_search.js        # Enforces safe search on search engines
 ├── youtube_content.js     # Custom filters for YouTube (e.g., hiding shorts)
+├── yt_scriptlet.js        # Main-world scriptlet for YouTube ad-data interception
 ├── blocked.html           # Custom "Site Blocked" page
 ├── blocked.js             # Logic for the blocked page
 ├── rules/                 # declarativeNetRequest JSON rule files
